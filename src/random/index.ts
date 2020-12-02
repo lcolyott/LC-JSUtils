@@ -1,12 +1,22 @@
-class LCUtils_Random {
+export type LCUtils_Random_Options = {
+    floorValue: boolean;
+}
+
+const defaultOptions: LCUtils_Random_Options = {
+    floorValue: false,
+}
+
+export default class LCUtils_Random {
+    /**
+     * Returns a value between min and max
+     * @param min minimum value
+     * @param max maximum value
+     * @param options optional parameters
+     */
     static randomBetween(
         min: number,
         max: number,
-        options: {
-            floorValue: boolean
-        } = {
-                floorValue: false
-            }
+        options: LCUtils_Random_Options = defaultOptions
     ): number {
         let output: number = min;
 
@@ -19,5 +29,3 @@ class LCUtils_Random {
         return output;
     }
 }
-
-export default LCUtils_Random;
