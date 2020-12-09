@@ -1,4 +1,4 @@
-export type LCUtils_Random_Options = {
+type LCUtils_Random_Options = {
     floorValue: boolean;
 }
 
@@ -6,7 +6,7 @@ const defaultOptions: LCUtils_Random_Options = {
     floorValue: false,
 }
 
-export default class LCUtils_Random {
+class LCUtils_Random {
     /**
      * Returns a value between min and max
      * @param min minimum value
@@ -29,3 +29,6 @@ export default class LCUtils_Random {
         return output;
     }
 }
+
+export default LCUtils_Random;
+export type { LCUtils_Random_Options };
